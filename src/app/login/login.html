@@ -3,13 +3,14 @@
   <h2>Iniciar Sesión</h2>
   <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div>
-      <label for="email">Correo electronico xd:</label>
+      <label for="email">Correo electrónico:</label>
       <input
         type="email"
         id="email"
         name="email"
         [(ngModel)]="user.email"
         placeholder="juanito@gmail.com"
+        autocomplete="email"
         required
       />
     </div>
@@ -21,17 +22,17 @@
         id="password"
         name="password"
         [(ngModel)]="user.password"
-        placeholder="contraseña"
+        placeholder="Contraseña"
+        autocomplete="current-password"
         required
       />
     </div>
 
-    <button type="submit" [disabled]="loginForm.invalid">Ingresar tus datos</button>
+    <button type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
   </form>
 
   <div *ngIf="submitted" class="message">
     <p>Correo: {{ user.email }}</p>
-    <p>Contraseña: {{ user.password }}</p>
     <p>¡Login simulado exitoso!</p>
   </div>
 </div>
